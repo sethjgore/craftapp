@@ -44,9 +44,9 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      compass: {
+      sass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer']
+        tasks: ['sass', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -170,21 +170,21 @@ module.exports = function (grunt) {
         ignorePath:  /..\//
       },
       sass: {
-        src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        ignorePath: /(\.\.\/){1,2}bower_components\//
+        src: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
       }
     },
 
     // Compiles Sass to CSS and generates necessary files if requested
-    sass : {
+    sass: {
       dist: {
         files: {
-          '.tmp/styles':'<$= yeoman.app %>/style.{scss,sass}'
+          '.tmp/styles/main.css':'<%= yeoman.app %>/styles/*.{scss,sass}'
         },
         options: {
           lineNumbers: true,
           sourcemap: true,
-          loadPath: 'bower_components'
+          includePaths: ['bower_components'],
+          imagePath: '<%= yeoman.app %>/images'
         }
       }
     },
@@ -368,11 +368,6 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        }, {
-          expand: true,
-          cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/*',
-          dest: '<%= yeoman.dist %>'
         }]
       },
       styles: {
