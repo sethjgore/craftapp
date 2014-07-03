@@ -183,8 +183,7 @@ module.exports = function (grunt) {
         options: {
           lineNumbers: true,
           sourcemap: true,
-          includePaths: ['bower_components'],
-          imagePath: '<%= yeoman.app %>/images'
+          includePaths: ['bower_components']
         }
       }
     },
