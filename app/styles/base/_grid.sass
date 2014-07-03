@@ -1,0 +1,26 @@
+.oc
+  +outer-container
+  +row
+  padding: 0 4rem
+
+  +media($tabletopish)
+    padding: 0 4.5rem
+
+.row
+  +row
+
+.oc-only
+  +outer-container
+
+= oc
+  @extend .oc
+
+@for $i from 1 through 12
+  .col-#{$i}
+    +span-columns($i)
+
+@for $i from 0 through 11
+  .col-shift-#{$i}
+    +shift($i)
+
+

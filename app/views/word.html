@@ -1,0 +1,11 @@
+<div ng-controller="WordCtrl">
+
+  <h1>This is the word app.</h1>
+
+<ul class="list-inline">
+  <li class="wordUnit" ng-repeat="word in sentence">
+    <div class="shape">{{word.shape}}</div>
+    <div class="text">{{word.text}}</div>
+  </li>
+</ul>
+</div>

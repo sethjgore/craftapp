@@ -9,9 +9,37 @@
  */
 angular.module('craftappApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+    $scope.articles = [
+      'the',
+      'an',
+      'a',
+      'some',
+      'these',
+      'this',
+      'that',
+      'those',
+      'one'
+    ];
+    $scope.adjectives = [
+      'azure',
+      'stocky',
+      'green',
+      'warped',
+      'peeling',
+      'shining',
+      'European',
+      'zippy',
+      'concrete'
+    ];
+    $scope.nouns = [
+      'cat',
+      'ship',
+      'bridge',
+      'car',
+      'compost',
+      'table',
+      'folio',
+      'veranda',
+      'quilt'
     ];
   });

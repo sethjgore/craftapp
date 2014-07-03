@@ -176,10 +176,23 @@ module.exports = function (grunt) {
     },
 
     // Compiles Sass to CSS and generates necessary files if requested
-    compass: {
+    sass : {
+      dist: {
+        files: {
+          '.tmp/styles':'<$= yeoman.app %>/style.{scss,sass}'
+        },
+        options: {
+          lineNumbers: true,
+          sourcemap: true,
+          loadPath: 'bower_components'
+        }
+      }
+    },
+
+
+//////COMPASS SETTINGS |
+   /* compass: {
       options: {
-        sassDir: '<%= yeoman.app %>/styles',
-        cssDir: '.tmp/styles',
         generatedImagesDir: '.tmp/images/generated',
         imagesDir: '<%= yeoman.app %>/images',
         javascriptsDir: '<%= yeoman.app %>/scripts',
@@ -203,6 +216,9 @@ module.exports = function (grunt) {
         }
       }
     },
+
+    */
+//////COMPASS SETTINGS |<
 
     // Renames files for browser caching purposes
     filerev: {
@@ -370,7 +386,7 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'compass:server'
+        'sass'
       ],
       test: [
         'compass'

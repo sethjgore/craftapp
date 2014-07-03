@@ -1,0 +1,14 @@
+@for $i from 1 to 11
+
+  $key : $i * 5
+  $prop : $i * .5rem
+
+  .trans__x#{$key}
+    transform: translateX(#{$prop})
+    &--inverted
+      transform: translateX(-#{prop})
+
+  .trans__y#{$key}
+    transform: translateY(#{$prop})
+    &--inverted
+      transform: translateY(-#{$prop})

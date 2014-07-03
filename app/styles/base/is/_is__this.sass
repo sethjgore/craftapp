@@ -1,0 +1,51 @@
+.is__this--bordered
+
+
+.is__this--bordered--thick
+
+
+
+.is__this--bordered--all
+
+
+
+.is__this--floating--left
+  float: left
+
+
+.is__this--floating--right
+  float: right
+
+.is__this--centered
+  margin: auto
+
+.is__this--inline
+  display: inline-block
+
+.br,
+.is__this--border-radius
+  border-radius: .5rem
+
+.is__this--bordered
+  border-bottom-width: .3rem
+  border-bottom-style: solid
+
+.w100,
+.is__this--width--100
+  width: 100%
+
+
+@for $i from 1 to 30
+
+  $key : $i * 5
+  $prop : $i * .5rem
+
+  .py#{$key}
+    padding-top: #{$prop}
+    padding-bottom: #{$prop}
+  .pt#{$key}
+    padding-top: #{$prop}
+  .pb#{$key}
+    padding-bottom: #{$prop}
+
+
