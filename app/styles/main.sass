@@ -1,11 +1,60 @@
+//PLUGINS
+@import "normalize-scss/normalize"
+//@import "font-awesome/scss/font-awesome"
+
+//FRAMEWORKS & GRIDS
+@import "bourbon/app/assets/stylesheets/bourbon"
+@import "neat/app/assets/stylesheets/neat-helpers"
+@import "base/breakpoints"
+@import "neat/app/assets/stylesheets/neat"
+
+//BASE
+@import "base/variables"
+@import "base/shame"
+@import "base/fonts"
+
+//BASE (BASSCSS)
+@import "basscss/scss/buttons"
+@import "basscss/scss/padding"
+@import "basscss/scss/margins"
+@import "basscss/scss/positions"
+@import "basscss/scss/lists"
+@import "basscss/scss/forms"
+
+//BASE CONTINUED
+@import "base/colors"
+@import "base/is/is"
+@import "base/type--sizing"
+@import "base/type--appearance"
+
+//HELPERS
+@import "helpers/flex"
+
+//COMPONENTS
+
+
+//UI
+@import "ui/body"
+@import "ui/intro"
+@import "ui/footer"
+
+//PLUGINS
+@import "plugins/traffic-light"
+
+
+
+
+
+@import normalize-scss/normalize
+
 //base
 @import is/is
+@import fx/fx
+@import startup
 
 //helpers
 
-.is__background--fs
-  display: flex
-  width: 100vw
-  height: 100vh
-  background: url('../images/main/splash.png') no-repeat center
-  background-size: contain
+//components
+//ux
+@import ui/splash
+//pages
