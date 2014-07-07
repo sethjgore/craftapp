@@ -174,7 +174,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Compiles Sass to CSS and generates necessary files if requested
+    //LIB-SASS....
     sass: {
       dist: {
         files: {
@@ -188,6 +188,22 @@ module.exports = function (grunt) {
       }
     },
 
+    /*
+    //GRUNT-CONTRIB-SASS
+    // Compiles Sass to CSS and generates necessary files if requested
+    sass: {
+      dist: {
+        files: {
+          '.tmp/styles/main.css':'<%= yeoman.app %>/styles/*.{scss,sass}'
+        },
+        options: {
+          lineNumbers: true,
+          sourcemap: true,
+          loadPath: ['bower_components']
+        }
+      }
+    },
+    */
 
 //////COMPASS SETTINGS |
    /* compass: {

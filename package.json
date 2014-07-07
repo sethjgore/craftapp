@@ -31,8 +31,8 @@
     "karma": "^0.12.16",
     "karma-jasmine": "^0.1.5",
     "firebase": "^1.0.17",
-    "grunt-sass": "^0.14.0",
-    "grunt-browser-sync": "^1.1.2"
+    "grunt-browser-sync": "^1.1.2",
+    "grunt-sass": "^0.14.0"
   },
   "engines": {
     "node": ">=0.10.0"
