@@ -1,8 +1,17 @@
-<div>
-  <h1>Grammar without words</h1>
-  <ul class="list-inline">
-    <li ng-repeat="word in articles"><h2>{{word}}</h2></li>
-    <li ng-repeat="word in adjectives"><h2>{{word}}</h2></li>
-    <li ng-repeat="word in nouns"><h2>{{word}}</h2></li>
-  </ul>
+ <section class="is__this--display--flex flex__direction--col is100vh">
+    <div class="flex__item is__this--display--flex flex--xy">
+      <h1 class="is__text--light">We make <span class="is__bg--c-pinterest p10 is__text--c-white is__text--bold is__this--border-radius">grmmr</span> fun.</h1>
+    </div>
+    <div class="ish10rem is__this--display--flex flex--xy is__bg--c-facebook">
+      <h2 class="ml30 flex__item is__text--c-white">grmmr</h2>
+      <dd class="flex__item is__this--display--flex is__text--c-white">
+        <dl class="flex__item is__text--center">About</dl>
+        <dl class="flex__item is__text--center">Why</dl>
+        <dl class="flex__item is__text--center">Features</dl>
+        <dl class="flex__item is__text--center">Store</dl>
+      </dd>
+    </div>
+  </section>
+  <ng-include src="'views/partials/header.html'"></ng-include>
+
 </div>
