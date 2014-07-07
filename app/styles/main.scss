@@ -1,19 +1,45 @@
-@import "sass-list-maps/sass-list-maps";
-//PLUGINS
+/////////////////////////////////////////////////////////
+// GRMMR STYLESHEET EXPLODER
+//
+// welcome to GRMMR
+// we make grmmr.
+// we make grmmr fun.
+// we make grmmr easy to grasp.
+// we make grmmr easy to teach.
+// we make grmmr easy to learn with.
+// we make grmmr easy to understand.
+// we make grmmr.
+//
+// note: read the file as if it is one longass paragraph.
+//       makes the whole thing easier to read.
+//       please comment well. (attach a phrase/partial sentence above every command.)
+//
+/////////////////////////////////////////////////////////
+
+//the BASE.
+//resets the stylesheet
 @import "normalize-scss/normalize";
-
-//FRAMEWORKS & GRIDS
-@import "is/is";
-@import "fx/fx";
-
-//BASE
+//adds bourbon framework
+@import "bourbon/dist/bourbon";
+//adds neat's bp() function for use with breakpoints
+@import "neat/app/assets/stylesheets/neat-helpers";
+//adds configuration information [fonts, sizing, colors]
 @import "base/config";
+//adds breakpoints to project, uses neat's bp() function,
+//before the neat framework. so we can load the neat library
+//with our own breakpoints.
+//@import "base/breakpoints"
+//adds the neat library
+@import "neat/app/assets/stylesheets/neat";
+//adds IS (modular styling helpers)
+@import "is/is";
+//adds FX (flexbox helpers)
+@import "fx/fx";
+//adds GUT (margin & padding placeholders)
+@import "gut/gut";
+//adds type sizing standards
 @import "base/type--sizing";
+//adds type appearance standards
 @import "base/type--appearance";
-
-//HELPERS
-
-//COMPONENTS
-
-//ux
+//adds UX
 @import "ui/splash";
