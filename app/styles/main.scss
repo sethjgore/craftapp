@@ -3,22 +3,17 @@
 @import "normalize-scss/normalize";
 
 //FRAMEWORKS & GRIDS
+@import "is/is";
+@import "fx/fx";
 
 //BASE
-
-//BASE CONTINUED
-@import "base/colors";
-@import "base/is/is";
+@import "base/config";
 @import "base/type--sizing";
 @import "base/type--appearance";
 
 //HELPERS
-@import "helpers/flex";
 
 //COMPONENTS
-@import "is/is";
-@import "fx/fx";
-@import "startup";
 
 //ux
 @import "ui/splash";

@@ -14,13 +14,14 @@ html,body
 //CATEGORY --- Paragraph & Baseline fonts
 p
   @extend .is__text--light
-  font-family: $theme-subfont
+  font-family: $theme-font
 
 
 //CATEGORY --- Headers
 h1,h2,h3,h4,h5,h6
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+  font-familY: $theme-heading
 
 h1
   @extend .is__text--light
@@ -35,12 +36,12 @@ hr
 //CATEGORY --- Components & Other type tags
 
 blockquote
-  @extend .is__text--centered
+  @extend .is__text--center
   @extend .is__text--light
 
 caption
   @extend .is__text--uppercase
-  @extend .is__text--centered
+  @extend .is__text--center
 
 a
   text-decoration: none

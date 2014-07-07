@@ -174,6 +174,7 @@ module.exports = function (grunt) {
       }
     },
 
+/*
     //LIB-SASS....
     sass: {
       dist: {
@@ -188,7 +189,7 @@ module.exports = function (grunt) {
       }
     },
 
-    /*
+    */
     //GRUNT-CONTRIB-SASS
     // Compiles Sass to CSS and generates necessary files if requested
     sass: {
@@ -203,7 +204,7 @@ module.exports = function (grunt) {
         }
       }
     },
-    */
+
 
 //////COMPASS SETTINGS |
    /* compass: {
