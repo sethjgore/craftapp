@@ -7,7 +7,7 @@
  * # WordCtrl
  * Controller of the craftappApp
  */
-angular.module('craftappApp')
+angular.module('grmmr')
     .controller('WordCtrl', function($scope) {
             $scope.sentence = [{
                     'word': 'First',

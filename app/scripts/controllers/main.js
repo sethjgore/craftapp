@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the craftappApp
  */
-angular.module('craftappApp')
+angular.module('grmmr')
   .controller('MainCtrl', function ($scope) {
     $scope.articles = [
       'the',

@@ -3,13 +3,9 @@
       <h1 class="is__text--light">We make <span class="is__bg--c-pinterest p10 is__text--c-white is__text--bold is__this--border-radius">grmmr</span> fun.</h1>
     </div>
     <div class="ish10rem is__this--display--flex flex--xy is__bg--c-facebook">
-      <div class="ml30 ish8rem flex__item is__text--c-white logo--simple"></div>
-      <dd class="flex__item is__this--display--flex is__text--c-white">
-        <dl class="flex__item is__text--center">About</dl>
-        <dl class="flex__item is__text--center">Why</dl>
-        <dl class="flex__item is__text--center">Features</dl>
-        <dl class="flex__item is__text--center">Store</dl>
-      </dd>
+      <div ng-controller="NavCtrl" ng-click="toggle()" class="ml30 ish8rem flex__item logo--simple">{{isVisible}}</div>
+      <div class="flex__item">
+      </div>
     </div>
   </section>
   <ng-include src="'views/partials/header.html'"></ng-include>
