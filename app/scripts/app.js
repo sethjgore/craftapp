@@ -20,11 +20,19 @@ var app = angular.module('grmmr', [
 app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/landing.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
+      .when('/fancy', {
+        templateUrl: 'views/landing--fancy.html',
+        controller: 'MainCtrl'
+      })
+      .when('/fyi', {
+        templateUrl: 'views/fyi.html',
+        controller: 'MainCtrl'
+      })
+      .when('/landing2', {
+        templateUrl: 'views/landing2.html',
         controller: 'MainCtrl'
       })
       .when('/word', {

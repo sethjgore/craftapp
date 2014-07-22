@@ -37,6 +37,8 @@
 @import "fx/fx";
 //adds GUT (margin & padding placeholders)
 @import "gut/gut";
+//adds NERVE (animation helpers)
+@import "nerve/nerve";
 //adds type sizing standards
 @import "base/type--sizing";
 //adds type appearance standards
@@ -46,3 +48,5 @@
 //adds UX
 @import "ui/site";
 @import "ui/main";
+@import "ui/landing";
+@import "ui/fyi";
