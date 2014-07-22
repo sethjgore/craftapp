@@ -2,25 +2,37 @@
 
 /**
  * @ngdoc overview
- * @name craftappApp
+ * @name grmmr
  * @description
  * # craftappApp
  *
  * Main module of the application.
  */
-angular
-  .module('craftappApp', [
+var app = angular.module('grmmr', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch'
-  ])
-  .config(function ($routeProvider) {
+  ]);
+
+app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/landing.html',
+        controller: 'MainCtrl'
+      })
+      .when('/fancy', {
+        templateUrl: 'views/landing--fancy.html',
+        controller: 'MainCtrl'
+      })
+      .when('/fyi', {
+        templateUrl: 'views/fyi.html',
+        controller: 'MainCtrl'
+      })
+      .when('/landing2', {
+        templateUrl: 'views/landing2.html',
         controller: 'MainCtrl'
       })
       .when('/word', {

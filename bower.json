@@ -24,7 +24,8 @@
     "angular-mocks": "1.2.16",
     "angular-scenario": "1.2.16",
     "fx": "git@github.com:sethjgore/fx.git",
-    "sass-list-maps": "~0.9.9"
+    "sass-list-maps": "~0.9.9",
+    "nerve": "git@github.com:sethjgore/nerve"
   },
   "appPath": "app"
 }
