@@ -35,9 +35,9 @@ app.config(function ($routeProvider) {
         templateUrl: 'views/landing2.html',
         controller: 'MainCtrl'
       })
-      .when('/word', {
-        templateUrl: 'views/word.html',
-        controller: 'WordCtrl'
+      .when('/whiteboard', {
+        templateUrl: 'views/whiteboard.html',
+        controller: 'WhiteboardCtrl'
       })
       .otherwise({
         redirectTo: '/'

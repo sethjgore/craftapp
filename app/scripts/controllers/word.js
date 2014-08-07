@@ -8,19 +8,6 @@
  * Controller of the craftappApp
  */
 angular.module('grmmr')
-    .controller('WordCtrl', function($scope) {
-            $scope.sentence = [{
-                    'word': 'First',
-                    'shape': 'verb',
-                    'text': 'ran'
-                }, {
-                    'word': 'Second',
-                    'shape': 'noun',
-                    'text': 'dog'
-                }, {
-                    'word': 'Second',
-                    'shape': 'article',
-                    'text': 'The'
-                  }
-                ];
-            });
+.controller('WordCtrl', function($scope) {
+
+        });
