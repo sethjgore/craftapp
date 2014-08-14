@@ -1,19 +1,31 @@
-<section class="is__flex flex__direction--row is100vw is100vh">
-  <dl class="isw15rem flex--item">
-    <dd draggable="true">Dragging</dd>
-    <dd>Oranges</dd>
-    <dd>Apples</dd>
-    <dd>Bananas</dd>
-    <dd>Blues</dd>
+<section class="is__flex flex__direction--col is100vw is80vh">
+
+  <dl ui-sortable ng-model="bank2" class="Sentence isw15rem flex--item">
+  <h3>ui.sortable</h3>
+    <dd draggable=true ng-repeat="word in bank2">{{word.text}}</dd>
   </dl>
-  <article class="flex__item flex--xy is__flex">
-    <h1 draggable class="is__text--c-">
-    <span draggable="true" ng-repeat="word in sentence">{{word.text}}</span></h1>
+
+  <dl hm-swipe="yell('I am swiping!')" hm-tap="yell('hello world!!!')" class="Sentence isw15rem flex--item">
+    <h3>ui.sortable</h3>
+    <dd draggable=true ng-repeat="word in bank2">{{word.text}}</dd>
+  </dl>
+
+   <article ui-sortable ng-model="sentence" class="Sentence flex__item flex--xy is__flex">
+    <div class="flex_item" draggable=true ng-repeat="word in sentence">
+      {{word.shape}}
+      <h2 class="Word">{{word.text}}</h2>
+    </div>
   </article>
-  <dl class="isw15rem flex--item">
-    <dd>Drag 'em here</dd>
-    <dd>Yellow</dd>
-    <dd>Purple</dd>
-    <dd></dd>
-  </dl>
+</section>
+<section class="is__flex flex__direction--row is100vw is20vh">
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
 </section>

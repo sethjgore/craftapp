@@ -14,32 +14,26 @@ var app = angular.module('grmmr', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngDraggable',
+    'angular-gestures',
+    'ui.router',
+    'ui.router.stateHelper'
+
   ]);
 
-app.config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/landing.html',
-        controller: 'MainCtrl'
-      })
-      .when('/fancy', {
-        templateUrl: 'views/landing--fancy.html',
-        controller: 'MainCtrl'
-      })
-      .when('/fyi', {
-        templateUrl: 'views/fyi.html',
-        controller: 'MainCtrl'
-      })
-      .when('/landing2', {
-        templateUrl: 'views/landing2.html',
-        controller: 'MainCtrl'
-      })
-      .when('/whiteboard', {
-        templateUrl: 'views/whiteboard.html',
-        controller: 'WhiteboardCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+app.config(function ($stateProvider, $routeProvider) {
+
+  $stateProvider
+    .state('static', {
+      abstract: true,
+      url: '/',
+      templateUrl: "views/home.html",
+      controller: "MainCtrl"
+    })
+    .state('home', {
+      url: '',
+      templateUrl: "views/home.html",
+      controller: "MainCtrl"
+    });
+});
