@@ -10,8 +10,8 @@
 angular.module('grmmr')
   .controller('DraftCtrl', function ($scope) {
     $scope.shape = {
-      currentDegree : "0",
-      Word: 'Word-verb-present',
+      currentDegree: "0",
       image : "/images/Word/verb-present.png"
       };
+
   });
