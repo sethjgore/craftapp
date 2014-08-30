@@ -15,13 +15,15 @@ var app = angular.module('grmmr', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngDraggable',
+    'ngDragDrop',
     'angular-gestures',
     'ui.router',
 
   ]);
 
-app.config(function ($stateProvider, $routeProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
+
+  $urlRouterProvider.when('','/');
 
   $stateProvider
     .state('home', {
@@ -39,14 +41,14 @@ app.config(function ($stateProvider, $routeProvider) {
       templateUrl: "views/labs/draft.html",
       controller: "DraftCtrl"
     })
-    .state('app', {
-      url: '/whiteboard',
-      templateUrl: "views/whiteboard.html",
-      controller: "WhiteboardCtrl"
-    })
     .state('wiki', {
       url: '/wiki',
       templateUrl: "views/labs/wiki.html",
+      controller: "WhiteboardCtrl"
+    })
+    .state('school', {
+      url: '/school',
+      templateUrl: "views/school.html",
       controller: "WhiteboardCtrl"
     })
     .state('labs', {
@@ -57,14 +59,20 @@ app.config(function ($stateProvider, $routeProvider) {
     .state('labs.experiment', {
       url: '/{experiment}',
       views: {
-        'main': {
+        'labs': {
           templateUrl:
-            function (stateParams){
-              return '/views/labs/' + stateParams.experiment + '.html';
+            function ($stateParams){
+              return '/views/labs/' + $stateParams.experiment + '.html';
             },
-          controller: "DraftCtrl"
+          controllerProvider:
+            function ($stateParams){
+
+
+              var ctrlName = $stateParams.experiment + 'Ctrl';
+
+              return  ctrlName.charAt(0).toUpperCase() + ctrlName.slice(1);
+            }
         }
       }
-
     });
 });

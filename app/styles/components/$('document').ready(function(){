@@ -1,0 +1,29 @@
+$('document').ready(function(){
+
+  var page = document.location.href.split('/').slice(0)[0];
+  var $sidebar = $('.ht__main').siblings();
+
+  console.log(page);
+  console.log($sidebar);
+
+  switch(page){
+
+  case "shop":
+  case "app/accounting/transactions/custpymt.nl":
+  case "app/accounting/print/printstatement.nl":
+  case "app/reporting/reportrunner.nl?reporttype=REGISTER&accttype=AcctRec":
+  case "app/accounting/transactions/transactionlist.nl?Transaction_TYPE=@ALL@":
+  case "app/accounting/transactions/transactionlist.nl?Transaction_TYPE=Estimate":
+  case "app/accounting/transactions/rtnauth.nl":
+  case "app/accounting/transactions/transactionlist.nl?Transaction_TYPE=RtnAuth":
+  case "app/common/item/itemsordered.nl":
+    $('body').addClass("notHomePage");
+    console.log('We hope you to find something on our Dixie Paper website!');
+    break;
+  default:
+    $sidebar.remove();
+    console.log('Welcome to Dixie Paper!');
+    break;
+};
+
+});

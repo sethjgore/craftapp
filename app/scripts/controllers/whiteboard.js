@@ -1,17 +1,16 @@
-app.controller('WhiteboardCtrl', ['$scope', function ($scope, ngDraggable) {
+app.controller('WhiteboardCtrl', ['$scope', function ($scope, ngDragDrop) {
    $scope.sentence = [{
             'shape': 'verb',
-            'text': 'Create '
+            'text': 'make '
         }, {
-            'word': 'Second',
+            'shape': 'art',
+            'text': 'your '
+        }, {
             'shape': 'noun',
-            'text': 'Your '
-        }, {
-            'shape': 'article',
-            'text': 'Sentence '
+            'text': 'sentences '
           }, {
-            'shape': 'article',
-            'text': 'Now '
+            'shape': 'adjective',
+            'text': 'happy '
           }
 
         ];
