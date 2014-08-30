@@ -1,0 +1,31 @@
+<section class="is__flex flex__direction--col is100vw is80vh">
+
+  <dl ui-sortable ng-model="bank2" class="Sentence isw15rem flex--item">
+  <h3>ui.sortable</h3>
+    <dd draggable=true ng-repeat="word in bank2">{{word.text}}</dd>
+  </dl>
+
+  <dl hm-swipe="yell('I am swiping!')" hm-tap="yell('hello world!!!')" class="Sentence isw15rem flex--item">
+    <h3>ui.sortable</h3>
+    <dd draggable=true ng-repeat="word in bank2">{{word.text}}</dd>
+  </dl>
+
+   <article ui-sortable ng-model="sentence" class="Sentence flex__item flex--xy is__flex">
+    <div class="flex_item" draggable=true ng-repeat="word in sentence">
+      {{word.shape}}
+      <h2 class="Word">{{word.text}}</h2>
+    </div>
+  </article>
+</section>
+<section class="is__flex flex__direction--row is100vw is20vh">
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+    <dd class="flex__item">Shape</dd>
+</section>

@@ -14,32 +14,65 @@ var app = angular.module('grmmr', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngDragDrop',
+    'angular-gestures',
+    'ui.router',
+
   ]);
 
-app.config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/landing.html',
-        controller: 'MainCtrl'
-      })
-      .when('/fancy', {
-        templateUrl: 'views/landing--fancy.html',
-        controller: 'MainCtrl'
-      })
-      .when('/fyi', {
-        templateUrl: 'views/fyi.html',
-        controller: 'MainCtrl'
-      })
-      .when('/landing2', {
-        templateUrl: 'views/landing2.html',
-        controller: 'MainCtrl'
-      })
-      .when('/word', {
-        templateUrl: 'views/word.html',
-        controller: 'WordCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+app.config(function ($stateProvider, $urlRouterProvider) {
+
+  $urlRouterProvider.when('','/');
+
+  $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: "views/home.html",
+      controller: "MainCtrl"
+    })
+    .state('fyi', {
+      url: '/fyi',
+      templateUrl: "views/fyi.html",
+      controller: "MainCtrl"
+    })
+    .state('draft', {
+      url: '/draft',
+      templateUrl: "views/labs/draft.html",
+      controller: "DraftCtrl"
+    })
+    .state('wiki', {
+      url: '/wiki',
+      templateUrl: "views/labs/wiki.html",
+      controller: "WhiteboardCtrl"
+    })
+    .state('school', {
+      url: '/school',
+      templateUrl: "views/school.html",
+      controller: "WhiteboardCtrl"
+    })
+    .state('labs', {
+      url: '/labs',
+      templateUrl: "views/labs/index.html",
+      controller: "DraftCtrl"
+    })
+    .state('labs.experiment', {
+      url: '/{experiment}',
+      views: {
+        'labs': {
+          templateUrl:
+            function ($stateParams){
+              return '/views/labs/' + $stateParams.experiment + '.html';
+            },
+          controllerProvider:
+            function ($stateParams){
+
+
+              var ctrlName = $stateParams.experiment + 'Ctrl';
+
+              return  ctrlName.charAt(0).toUpperCase() + ctrlName.slice(1);
+            }
+        }
+      }
+    });
+});

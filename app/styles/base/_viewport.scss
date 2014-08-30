@@ -1,0 +1,12 @@
+//http://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972
+
+
+@viewport{
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+
+@-ms-viewport{
+  zoom: 1.0;
+  width: extend-to-zoom;
+}

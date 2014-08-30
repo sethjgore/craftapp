@@ -1,0 +1,22 @@
+<div class="is100vw flex flex--xy flex__direction--col" ng-switch on="shape.currentDegree">
+  <img ng-switch-when="-90" class="is75vw" src="/images/labs/wet/willbe.png" alt="">
+  <img ng-switch-when="0" class="is75vw" src="/images/labs/wet/is.png" alt="">
+  <img ng-switch-when="90" class="is75vw" src="/images/labs/wet/was.png" alt="">
+
+  <div class="ish15rem isw15rem {{shape.Word}}" style="-webkit-transform: rotate({{shape.currentDegree}}deg)">
+    </div>
+  <h1 class="mt0" ng-switch-when="-90">
+  the boy will be wet</h1>
+  <h1 class="mt0" ng-switch-when="0">the boy is wet</h1>
+  <h1 class="mt0" ng-switch-when="90">the boy was wet</h1>
+</div>
+
+<div class="is100vw is20vh flex flex--xy flex__direction--row is__bg--c-shade">
+  <div class="flex__item">
+    <div class="ish10rem isw10rem {{shape.Word}}" style="-webkit-transform: rotate({{shape.currentDegree}}deg)">
+    </div>
+  </div>
+  <div class="flex__item">
+    <input type="range" step="90" min="-90" max="90" ng-model="shape.currentDegree">
+  </div>
+</div>
