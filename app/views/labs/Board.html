@@ -1,8 +1,23 @@
 <section class="flex__item flex__direction--col">
-    <article ng-model="sentence" class="Sentence flex__item flex--xy is__flex">
-        <div dnd-draggable=true drag="word" style="order:{{$index}};" class="flex_item" ui-on-drop="replaceWith($data)" ng-repeat="word in sentence">
-            <img ui-on-drop="replaceWith($data)" drag="word.shape" dnd-draggable=true class="is5vw" src="images/Word/{{word.shape}}.png" alt="">
-            <h2 drag-handle-class class=" Word">{{word.text}}</h2>
+    <article dnd-list="sentence" ng-model="sentence" class="Sentence flex__item flex--xy is__flex">
+        <div
+            dnd-draggable="word"
+            dnd-effect-allowed="move"
+            dnd-moved="sentence.splice($index,1)"
+            dnd-selected="models.selected = word"
+            class="flex_item"
+            ng-repeat="word in sentence"
+            >
+
+            <img
+                dnd-draggable="word.shape"
+                class="is5vw"
+                src="images/Word/{{word.shape}}.png"
+                alt="symbol {{word.shape}}"
+                >
+            <h2
+                class="Word"
+                >{{word.text}}</h2>
         </div>
     </article>
 </section>
