@@ -18,33 +18,36 @@ var app = angular.module('grmmr', [
     'ngDragDrop',
     'angular-gestures',
     'ui.router',
+    'dndLists'
 
   ]);
 
-app.config(function ($stateProvider, $urlRouterProvider) {
 
+app.config(function ($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
+
+  //DOES: enables external media
+  //READ: http://toddmotto.com/creating-an-angularjs-directive-from-one-of-your-existing-plugins-scripts/
+  $sceDelegateProvider.resourceUrlWhitelist(['self', '**']);
+
+  //DOES: redirects / to /#/
   $urlRouterProvider.when('','/');
 
+  //DOES: app's routing
   $stateProvider
     .state('home', {
       url: '/',
       templateUrl: "views/home.html",
       controller: "MainCtrl"
     })
+    .state('overview', {
+      url: '/overview',
+      templateUrl: "views/overview.html",
+      controller: "MainCtrl"
+    })
     .state('fyi', {
       url: '/fyi',
       templateUrl: "views/fyi.html",
       controller: "MainCtrl"
-    })
-    .state('draft', {
-      url: '/draft',
-      templateUrl: "views/labs/draft.html",
-      controller: "DraftCtrl"
-    })
-    .state('wiki', {
-      url: '/wiki',
-      templateUrl: "views/labs/wiki.html",
-      controller: "WhiteboardCtrl"
     })
     .state('school', {
       url: '/school',
@@ -66,7 +69,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             },
           controllerProvider:
             function ($stateParams){
-
 
               var ctrlName = $stateParams.experiment + 'Ctrl';
 

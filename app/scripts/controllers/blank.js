@@ -1,4 +1,4 @@
-app.controller('WhiteboardCtrl', ['$scope', function ($scope, ngDragDrop) {
+app.controller('BlankCtrl', ['$scope', function ($scope, ngDragDrop) {
    $scope.sentence = [{
             'shape': 'verb',
             'text': 'make '

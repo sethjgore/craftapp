@@ -1,0 +1,25 @@
+<section class="flex__item flex__direction--col">
+    <article ng-model="sentence" class="Sentence flex__item flex--xy is__flex">
+        <div dnd-draggable=true drag="word" style="order:{{$index}};" class="flex_item" ui-on-drop="replaceWith($data)" ng-repeat="word in sentence">
+            <img ui-on-drop="replaceWith($data)" drag="word.shape" dnd-draggable=true class="is5vw" src="images/Word/{{word.shape}}.png" alt="">
+            <h2 drag-handle-class class=" Word">{{word.text}}</h2>
+        </div>
+    </article>
+</section>
+<section class="flex is__background--c-shade flex__direction--row p15">
+    <dd class="flex__item">
+        <img dnd-draggable=true drag="$scope" class="ish4rem" src="images/Word/art.png" alt="">
+    </dd>
+    <dd class="flex__item">
+        <img dnd-draggable=true drag="$scope" class="ish4rem" src="images/Word/adjective.png" alt="">
+    </dd>
+    <dd class="flex__item">
+        <img dnd-draggable=true drag="$scope" class="ish4rem" src="images/Word/verb.png" alt="">
+    </dd>
+    <dd class="flex__item">
+        <img dnd-draggable=true drag="$scope" class="ish4rem" src="images/Word/noun.png" alt="">
+    </dd>
+    <dd class="flex__item">
+        <img dnd-draggable=true drag="$scope" class="ish4rem" src="images/Word/preposition.png" alt="">
+    </dd>
+</section>

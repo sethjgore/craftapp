@@ -48,8 +48,12 @@
 //adds components
 @import "components/board";
 @import "components/Word";
+
 //adds UX
 @import "ui/site";
 @import "ui/main";
 @import "ui/landing";
 @import "ui/fyi";
+
+// Plugins
+@import "plugins/fluidvids";
