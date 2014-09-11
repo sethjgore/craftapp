@@ -18,7 +18,8 @@ var app = angular.module('grmmr', [
     'ngDragDrop',
     'angular-gestures',
     'ui.router',
-    'dndLists'
+    'dndLists',
+    'ui.sortable'
 
   ]);
 
