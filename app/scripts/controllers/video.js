@@ -8,5 +8,6 @@
  * Controller of the craftappApp
  */
 angular.module('grmmr')
-  .controller('MainCtrl', function ($scope) {
+  .controller('VideoCtrl', function ($scope) {
+
   });

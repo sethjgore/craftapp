@@ -1,10 +1,49 @@
+.Sentence
+  position: relative
+  flex-wrap: wrap
+
+.WordUnit
+  transition: none
+  user-select: none
+  position: relative
+
 .Word
   white-space: pre
+  transition: 1s 0s all ease-in-out
+  @extend .m0
+  position: relative
 
 .Word-verb-present
   background: url('../images/Word/verb-present.png') no-repeat
   background-size: contain
   transition: .8s 0s all ease-in-out
 
-.on-drag-hover
-  border-left: 2px solid pink
+.dndPlaceholder
+  border-left: 50px solid pink
+  width: 1rem
+  min-height: 100%
+  list-type: none
+
+// For ngSortable Sentence/Words
+.sortable-item
+  border: none
+  background-color: none
+
+.sortable-handle
+  cursor: move
+
+.sortable-placeholder
+  border: rgba(0,0,0,.5) 1rem dashed
+
+.sortable-drag
+  position: absolute
+  background: white
+  border-radius: .5rem
+  border: 1rem white solid
+  pointer-events: none
+  box-sizing: content-box
+  opacity: 1
+  z-index: 9999
+
+.sortable-hidden
+  display: none !important

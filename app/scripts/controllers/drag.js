@@ -1,4 +1,20 @@
-app.controller('WhiteboardCtrl', ['$scope', function ($scope, ngDragDrop) {
+app.controller('DragCtrl', ['$scope', function ($scope) {
+
+   $scope.dragSortOptions = {
+
+    accept: function (sourceItemHandleScope, destSortableScope) {
+        return true;
+    },
+
+    itemMoved: function(event){
+        console.log(event);
+    },
+
+    orderChanged: function(event){
+        console.log("we changed order!");
+    }
+   };
+
    $scope.sentence = [{
             'shape': 'verb',
             'text': 'make '
@@ -27,4 +43,4 @@ app.controller('WhiteboardCtrl', ['$scope', function ($scope, ngDragDrop) {
     $scope.replaceWith= function($data){
         $scope.sentence.push($data);
     }
-}])
+}]);
