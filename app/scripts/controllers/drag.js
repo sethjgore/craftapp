@@ -29,6 +29,7 @@ app.controller('DragCtrl', ['$scope', function ($scope) {
             'text': 'happy '
           }
 
+
         ];
 
     $scope.yell = function(str){

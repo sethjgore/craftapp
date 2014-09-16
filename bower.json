@@ -28,7 +28,8 @@
     "angular-dragdrop": "https://github.com/ganarajpr/angular-dragdrop.git#~1.0.3",
     "angular-drag-and-drop-lists": "https://github.com/marceljuenemann/angular-drag-and-drop-lists.git#~1.0.0",
     "fluidvids": "https://github.com/toddmotto/fluidvids.git#~2.4.1",
-    "grmmr-sortable": "git@github.com:sethjgore/grmmr-sortable"
+    "grmmr-sortable": "git@github.com:sethjgore/grmmr-sortable",
+    "angularfire": "~0.8.2"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

@@ -1,0 +1,24 @@
+<article sortable="dragSortOptions" ng-model="sentence" class="Sentence flex__item is__flex">
+
+<div
+  sortable-item
+  class="WordUnit"
+  ng-repeat="word in sentence"
+  >
+
+  <img
+      sortable-item
+      class="is5vw"
+      src="images/Word/{{word.shape}}.png"
+      alt="symbol {{word.shape}}"
+      >
+
+  <p
+  sortable-item-handle
+  class="Word"
+      >{{word.text}}</p>
+
+  <input style="display: inline-block" type="text" ng-model="word.text" value="{{word.text}}">
+
+</div>
+</article>

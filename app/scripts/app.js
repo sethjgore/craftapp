@@ -15,14 +15,11 @@ var app = angular.module('grmmr', [
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ngDragDrop',
     'angular-gestures',
     'ui.router',
-    'dndLists',
-    'ui.sortable'
-
+    'ui.sortable',
+    'firebase'
   ]);
-
 
 app.config(function ($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
 
@@ -52,13 +49,12 @@ app.config(function ($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
     })
     .state('school', {
       url: '/school',
-      templateUrl: "views/school.html",
-      controller: "WhiteboardCtrl"
+      templateUrl: "views/school.html"
     })
     .state('labs', {
       url: '/labs',
       templateUrl: "views/labs/index.html",
-      controller: "DraftCtrl"
+      controller: "MainCtrl"
     })
     .state('labs.experiment', {
       url: '/{experiment}',
@@ -79,3 +75,5 @@ app.config(function ($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
       }
     });
 });
+
+app.constant('FIREBASE_URL', 'https://fiery-fire-1420.firebaseio.com/');

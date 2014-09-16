@@ -1,22 +1,5 @@
 <section class="flex__item flex__direction--row">
-    <article sortable="dragSortOptions" ng-model="sentence" class="Sentence flex__item is__flex">
-        <div
-            sortable-item
-            class="WordUnit"
-            ng-repeat="word in sentence"
-            >
-
-            <img
-                class="is5vw"
-                src="images/Word/{{word.shape}}.png"
-                alt="symbol {{word.shape}}"
-                >
-            <h2
-            sortable-item-handle
-            class="Word"
-                >{{word.text}}</h2>
-        </div>
-    </article>
+<sentence></sentence>
 </section>
 <section class="flex is__background--c-shade flex__direction--row p15">
     <dd class="flex__item">
