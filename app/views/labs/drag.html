@@ -1,25 +1,21 @@
 <section class="flex__item flex__direction--row">
 <sentence></sentence>
 </section>
-<section class="flex is__background--c-shade flex__direction--row p15">
-    <dd class="flex__item">
+<section
+    sortable="dragSortOptions"
+    class="is__background--c-shade flex flex__item flex__direction" ng-model="shape"
+    >
+
+    <dd
+        sortable-item
+        class="flex__item"
+        ng-repeat="shapes in shape"
+        >
+
         <img
-            dnd-draggable-"$this" class="ish4rem" src="images/Word/art.png" alt="">
-    </dd>
-    <dd class="flex__item">
-        <img
-            dnd-draggable-"$this" class="ish4rem" src="images/Word/adjective.png" alt="">
-    </dd>
-    <dd class="flex__item">
-        <img
-            dnd-draggable-"$this" class="ish4rem" src="images/Word/verb.png" alt="">
-    </dd>
-    <dd class="flex__item">
-        <img
-            dnd-draggable-"$this" class="ish4rem" src="images/Word/noun.png" alt="">
-    </dd>
-    <dd class="flex__item">
-        <img
-            dnd-draggable-"$this" class="ish4rem" src="images/Word/preposition.png" alt="">
+            sortable-item-handle
+            class="ish4rem"
+            src="images/Word/{{shapes.name}}.png"
+            alt="">
     </dd>
 </section>

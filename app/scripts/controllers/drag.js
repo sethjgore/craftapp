@@ -1,4 +1,8 @@
-app.controller('DragCtrl', ['$scope', function ($scope) {
+'use.strict';
+
+app.controller('DragCtrl', function ($scope, Shape) {
+
+   $scope.shape = Shape.all;
 
    $scope.dragSortOptions = {
 
@@ -27,21 +31,15 @@ app.controller('DragCtrl', ['$scope', function ($scope) {
           }, {
             'shape': 'adjective',
             'text': 'happy '
-          }
+          }];
 
-
-        ];
 
     $scope.yell = function(str){
         var $str = str;
         console.log($str);
     }
 
-    $scope.sortableOptions = {
-        connectWith: ".Sentence"
-    }
-
     $scope.replaceWith= function($data){
         $scope.sentence.push($data);
     }
-}]);
+});
