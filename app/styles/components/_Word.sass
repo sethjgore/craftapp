@@ -1,3 +1,5 @@
+$wordSize : 4.3rem
+
 .Sentence
   position: relative
   flex-wrap: wrap
@@ -9,9 +11,17 @@
 
 .Word
   white-space: pre
-  transition: 1s 0s all ease-in-out
-  @extend .m0
   position: relative
+  display: block
+  @extend .m0
+  @extend .is__text--c-black
+  font-size: $wordSize
+  border: none
+  outline: none
+
+.Word--editing
+  @extend .Word
+  @extend .is__text--c-blackest
 
 .Word-verb-present
   background: url('../images/Word/verb-present.png') no-repeat

@@ -76,4 +76,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
     });
 });
 
+app.run(function(){
+
+})
 app.constant('FIREBASE_URL', 'https://fiery-fire-1420.firebaseio.com/');

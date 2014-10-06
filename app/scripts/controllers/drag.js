@@ -2,6 +2,8 @@
 
 app.controller('DragCtrl', function ($scope, Shape) {
 
+   $scope.libraryPane = '';
+
    $scope.shape = Shape.all;
 
    $scope.dragSortOptions = {
@@ -19,20 +21,31 @@ app.controller('DragCtrl', function ($scope, Shape) {
     }
    };
 
+
+   $scope.trimInput = function(key){
+
+    //offsets key so NAME field has better spacing
+    var key = key;
+
+    return (key > 0 ? key : 1);
+   }
+
    $scope.sentence = [{
             'shape': 'verb',
-            'text': 'make '
+            'text': 'make'
         }, {
             'shape': 'art',
-            'text': 'your '
+            'text': 'your'
         }, {
             'shape': 'noun',
-            'text': 'sentences '
+            'text': 'sentences'
           }, {
             'shape': 'adjective',
-            'text': 'happy '
+            'text': 'happy'
           }];
 
+
+    $scope.word = '';
 
     $scope.yell = function(str){
         var $str = str;
@@ -41,5 +54,23 @@ app.controller('DragCtrl', function ($scope, Shape) {
 
     $scope.replaceWith= function($data){
         $scope.sentence.push($data);
+    }
+
+    $scope.addWordUnit = function(text){
+
+        var word = {'shape': 'blank', 'text': text};
+
+        $scope.sentence.push(word);
+    }
+
+    $scope.changeShape = function(shape){
+        $scope.word['shape'] = shape;
+    }
+
+    $scope.addSentence = function(){
+        $scope.sentence
+    }
+    $scope.currentWord = function($index){
+        $scope.word = $scope.sentence[$index];
     }
 });

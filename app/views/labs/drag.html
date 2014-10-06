@@ -1,21 +1,35 @@
-<section class="flex__item flex__direction--row">
-<sentence></sentence>
-</section>
-<section
-    sortable="dragSortOptions"
-    class="is__background--c-shade flex flex__item flex__direction" ng-model="shape"
-    >
+<section ng-show="sentence.editing == 'shapes-tree'" class="p10 is__background--c-red flex flex__item flex__direction">
+    <dd class="m0 flex__item" ng-repeat="shapes in shape[libraryPane].shapes">
 
-    <dd
-        sortable-item
-        class="flex__item"
-        ng-repeat="shapes in shape"
-        >
-
-        <img
-            sortable-item-handle
-            class="ish4rem"
-            src="images/Word/{{shapes.name}}.png"
-            alt="">
+        <img class="wb-Shape" src="images/Word/{{shapes.name}}.png" alt="" ng-click="changeShape(shapes.name); sentence.editing = false">
     </dd>
+</section>
+<section ng-show="sentence.editing == 'shapes'" class="p10 is__background--c-shade flex flex__item flex__direction">
+    <dd class="m0 flex__item" ng-repeat="shapes in shape">
+
+        <img class="wb-Shape" src="images/Word/{{shapes.name}}.png" alt="" ng-click="changeShape(shapes.name); sentence.editing = 'false'"
+        hm-hold="sentence.editing = 'shapes-tree'; $parent.libraryPane = '{{$index}}'">
+    </dd>
+</section>
+<div class="p10 flex__item flex flex--xsb">
+        <div>
+            <a ng-click="addWordUnit('word')">
+            <span class="is__text--size--mega">+</span>
+        </a>
+        </div>
+        <a
+            ng-hide="sentence.editing == 'words'"
+            ng-click="sentence.editing = 'words' "
+            >
+            <span class="is__text--size--mega">edit</span></a>
+
+        <a ng-show="sentence.editing == 'words'" ng-click="sentence.editing = false ">
+            <span class="is__text--size--mega">editing</h4>
+        </a>
+
+</div>
+<section class="p10 flex__item flex__direction--row">
+
+    <sentence state="{{sentence.editing}}">
+    </sentence>
 </section>
