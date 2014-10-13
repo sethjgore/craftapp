@@ -35,6 +35,8 @@
 @import "neat/app/assets/stylesheets/neat";
 //adds IS (modular styling helpers)
 @import "is/is";
+//adds web app classes & recs from http://www.luster.io/blog/9-29-14-mobile-web-checklist.html
+@import "base/app";
 //adds FX (flexbox helpers)
 @import "fx/fx";
 //adds GUT (margin & padding placeholders)
@@ -55,6 +57,7 @@
 @import "ui/main";
 @import "ui/landing";
 @import "ui/fyi";
+@import "ui/inventory";
 
 // Plugins
 @import "plugins/fluidvids";

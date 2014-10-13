@@ -1,34 +1,40 @@
 <article sortable="dragSortOptions" ng-model="sentence" class="Sentence flex__item flex flex--xy" ng-init="sentence.editing = false;">
 
 <div
-
   sortable-item
-  class="WordUnit flex flex__direction--col"
+  class="WordUnit usn flex flex__direction--col"
   ng-repeat="word in sentence"
   >
 
-  <image
+  <div class="flex__item flex flex--xsa">
+    <image
       class="wb-Shape"
+      ng-class="{'wb-Shape--blank' : (word.shape == 'blank')}"
       ng-src="/images/Word/{{word.shape}}.png"
       hm-tap="sentence.editing = 'shapes'; currentWord($index)"
+      hm-hold="sentence.editing = 'shapes'; currentWord($index)"
       >
+  </div>
 
   <input
     class="Word--editing"
+    ng-class="{usn: sentence.editing !== 'words'}"
     ng-show="sentence.editing == 'words'"
     type="text"
     ng-model="word.text"
     value="{{word.text}}"
-    size="{{trimInput(word.text.length)}}">
+    size="{{trimInput(word.text.length)}}"
+    >
 
   <input
-    class="Word"
+    class="Word usn"
     ng-hide="sentence.editing == 'words'"
     sortable-item-handle
     type="text"
     ng-model="word.text"
     value="{{word.text}}"
-    size="{{trimInput(word.text.length)}}">
+    size="{{trimInput(word.text.length)}}"
+    >
 
 
 

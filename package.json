@@ -32,7 +32,8 @@
     "karma-jasmine": "^0.1.5",
     "firebase": "^1.0.17",
     "grunt-browser-sync": "^1.1.2",
-    "grunt-contrib-sass": "^0.7.3"
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-ng-annotate": "^0.4.0"
   },
   "engines": {
     "node": ">=0.10.0"
