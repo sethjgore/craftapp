@@ -1,11 +1,16 @@
 <article sortable="dragSortOptions" ng-model="sentence" class="Sentence flex__item flex flex--xy" ng-init="sentence.editing = false;">
 
 <div
-  ng-init="word.dragged = false;"
-  hm-drag="word.dragged = !word.dragged" ng-attr-sortable-item="{{word.dragged}}"
+  ng-init="word.dragged = false; hello = 'yo'; "
+  hm-dragstart="word.dragged = !word.dragged"
+  hm-dragend="word.dragged = !word.dragged"
   class="WordUnit usn flex flex__direction--col"
   ng-repeat="word in sentence"
+  {{hello ? "word.dragged" : "hello"}}
   >
+
+  {{word.dragged}}
+  {{hello}}
 
   <div class="flex__item flex flex--xsa">
     <image
