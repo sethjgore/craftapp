@@ -1,7 +1,8 @@
 <article sortable="dragSortOptions" ng-model="sentence" class="Sentence flex__item flex flex--xy" ng-init="sentence.editing = false;">
 
 <div
-  sortable-item
+  ng-init="word.dragged = false;"
+  hm-drag="word.dragged = !word.dragged" ng-attr-sortable-item="{{word.dragged}}"
   class="WordUnit usn flex flex__direction--col"
   ng-repeat="word in sentence"
   >

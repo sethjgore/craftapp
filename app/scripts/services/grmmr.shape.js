@@ -5,9 +5,13 @@ app.factory('Shape', function() {
     var shapes = [{
         'name': 'art',
         'shapes': [{
+            'name': 'art-a-caps'
+        }, {
             'name': 'art-a'
         }, {
             'name': 'art-an'
+        }, {
+            'name': 'art-the-caps'
         }, {
             'name': 'art-the'
         }, {
