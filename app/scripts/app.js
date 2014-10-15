@@ -61,7 +61,7 @@ app.config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
             views: {
                 'labs': {
                     templateUrl: function($stateParams) {
-                        return '/views/labs/' + $stateParams.experiment + '.html';
+                        return 'views/labs/' + $stateParams.experiment + '.html';
                     },
                     controllerProvider: function($stateParams) {
 

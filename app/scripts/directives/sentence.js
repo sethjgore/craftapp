@@ -4,8 +4,7 @@ app.directive('sentence', function () {
     transclude: true,
     link: function (scope, el, attrs) {
       scope.attrs = attrs;
-      scope.state = attrs.state;
     },
-    templateUrl: 'scripts/directives/sentence.html'
+    templateUrl: '/views/directives/sentence.html'
   };
 });
