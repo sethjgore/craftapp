@@ -2,6 +2,8 @@
 
 app.controller('DragCtrl', function ($scope, Shape) {
 
+   $scope.tutorial = false;
+
    $scope.libraryPane = '';
 
    $scope.shape = Shape.all;

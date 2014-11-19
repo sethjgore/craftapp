@@ -1,5 +1,32 @@
-<div class="is100vw flex flex__direction--col" ui-view="labs">
+<div ui-view="labs">
+    <ng-include src="'views/partials/nav.html'"></ng-include>
+    <ng-include src="'views/partials/landing/header.html'"></ng-include>
+    <article class="ml60 mr60 mb40">
+        <div class="isw75rem--max">
+            <h1 class="is__text--medium fyi__Oswald">Labs</h1>
+            <h2>
+                We make sure our products are useful before we invest our time into them.
+            </h2>
+        </div>
 
+        <aside class="isw100 flex flex--xsb">
+            <a class="inventory--box" ui-sref="labs.experiment({experiment: 'drag'})">
+                <div class="nerve__smack">
+                    <img src="https://api.fnkr.net/testimg/350x200/7ACFF0/FFF/?text=WHITEBOARD">
+                    <h3>
+                        All of our shapes in one place!
+                    </h3>
+                </div>
+            </a>
+            <div class="nerve__smack">
+                <img class="isw100" src="https://api.fnkr.net/testimg/350x200/7ACFF0/FFF/?text=WHERE">
+                <h3>
+                    Real-world preposition learning
+                </h3>
+                <h4 class="is__text--c-red">COMING SOON</h4>
+            </div>
+            <div></div>
+        </aside>
+
+    </article>
 </div>
-
-<!--add 100vh when ios bug is fixed-->

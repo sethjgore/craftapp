@@ -1,53 +1,46 @@
 <section ng-show="sentence.editing == 'shapes-tree'" class="p10 is__background--c-red flex flex--xsa flex__item flex__direction">
-    <dd
-    class="m0"
-    ng-repeat="shapes in shape[libraryPane].shapes"
-    hm-tap="sentence.editing = false; changeShape(shapes.name);"
-    >
-        <img
-        class="wb-Shape usn pen"
-        src="images/Word/{{shapes.name}}.png"
-        alt=""
-        >
+    <dd class="m0" ng-repeat="shapes in shape[libraryPane].shapes" hm-tap="sentence.editing = false; changeShape(shapes.name);">
+        <img class="wb-Shape usn pen" src="images/Word/{{shapes.name}}.png" alt="">
     </dd>
 </section>
-<section
-    ng-show="sentence.editing == 'shapes'"
-    class="p10 is__background--c-shade flex flex--xsa flex__item flex__direction">
+<section ng-show="sentence.editing == 'shapes'" class="p10 is__background--c-shade flex flex--xsa flex__item flex__direction">
 
-    <dd
-    class="m0"
-    ng-repeat="shapes in shape"
-    hm-tap="sentence.editing = 'false'; changeShape(shapes.name);"
-    hm-hold="sentence.editing = 'shapes-tree'; $parent.libraryPane = '{{$index}}'"
-    >
+    <dd class="m0" ng-repeat="shapes in shape" hm-tap="sentence.editing = 'false'; changeShape(shapes.name);" hm-hold="sentence.editing = 'shapes-tree'; $parent.libraryPane = '{{$index}}'">
 
-        <img
-        class="wb-Shape usn pen"
-        src="images/Word/{{shapes.name}}.png"
-        alt=""
-        >
+        <img class="wb-Shape usn pen" src="images/Word/{{shapes.name}}.png" alt="">
     </dd>
 </section>
 <div class="p10 flex__item flex flex--xsb">
-        <div>
-            <a ng-click="addWordUnit('word')">
+    <div>
+        <a ng-hide="tutorial" ng-click="addWordUnit('word')">
             <span class="is__text--size--mega">+</span>
         </a>
-        </div>
-        <a
-            ng-hide="sentence.editing == 'words'"
-            ng-click="sentence.editing = 'words' "
-            >
-            <span class="is__text--size--mega">edit</span></a>
+    </div>
+
+    <div>
+        <a ng-hide="tutorial" ng-click="tutorial = 'true'">
+            <span class="is__text--c-yellow is__text--bold is__text--size--mega">Help?</span>
+        </a>
+
+        <a ng-show="tutorial" ng-click="tutorial = 'false'">
+            <span class="is__text--c-yellow is__text--bold is__text--size--mega">Back to Your Sentence</span>
+        </a>
+    </div>
+    <div ng-hide="tutorial">
+        <a ng-hide="sentence.editing == 'words'" ng-click="sentence.editing = 'words' ">
+            <span class="is__text--size--mega">edit</span>
+        </a>
 
         <a ng-show="sentence.editing == 'words'" ng-click="sentence.editing = false ">
             <span class="is__text--size--mega">editing</h4>
         </a>
-
+    </div>
+    <div ng-show="tutorial"></div>
 </div>
-<section class="p10 flex__item flex__direction--row">
+<section ng-hide="tutorial" class="p10 flex__item flex__direction--row">
 
     <sentence state="{{sentence.editing}}">
     </sentence>
 </section>
+
+<div ng-show="tutorial" ng-include="'views/tutorials/tutorial--drag.html'"></div>

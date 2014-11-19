@@ -20,6 +20,7 @@
       ng-src="/images/Word/{{word.shape}}.png"
       hm-tap="sentence.editing = 'shapes'; currentWord($index)"
       hm-hold="sentence.editing = 'shapes'; currentWord($index)"
+      hm-hold-opts="{holdThreshold: 1}"
       >
   </div>
 

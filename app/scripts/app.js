@@ -33,6 +33,11 @@ app.config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
     //DOES: app's routing
     $stateProvider
         .state('home', {
+            abstract: true,
+            template: '<div ui-view></div>',
+            controller: "MainCtrl"
+        })
+        .state('home.index', {
             url: '/',
             templateUrl: "views/home.html",
             controller: "MainCtrl"
@@ -41,6 +46,11 @@ app.config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
             url: '/overview',
             templateUrl: "views/overview.html",
             controller: "MainCtrl"
+        })
+        .state('login', {
+            url: '/login',
+            templateUrl: "views/login.html",
+            controller: "LoginCtrl"
         })
         .state('fyi', {
             url: '/fyi',
@@ -79,7 +89,9 @@ app.config(function($stateProvider, $urlRouterProvider, $sceDelegateProvider) {
         });
 });
 
-app.run(function() {
-
+app.run(function($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
 })
+
 app.constant('FIREBASE_URL', 'https://fiery-fire-1420.firebaseio.com/');

@@ -30,7 +30,8 @@
     "fluidvids": "https://github.com/toddmotto/fluidvids.git#~2.4.1",
     "grmmr-sortable": "git@github.com:sethjgore/grmmr-sortable",
     "angularfire": "~0.8.2",
-    "prevent-overscroll": "https://github.com/luster-io/prevent-overscroll.git"
+    "prevent-overscroll": "https://github.com/luster-io/prevent-overscroll.git",
+    "impulse": "~0.0.6"
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",
